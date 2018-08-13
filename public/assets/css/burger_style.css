@@ -1,0 +1,19 @@
+
+body {
+    background: url('../img/burger.jpg');
+       /* Set a specific height */
+       height: 500px; 
+
+       /* Create the parallax scrolling effect */
+       background-attachment: fixed;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+	}
+
+.panel {
+    padding:35px;
+    opacity:.8;
+    background: url('../img/space.jpeg');
+    color:rgb(65, 238, 65);
+}

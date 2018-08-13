@@ -1,0 +1,71 @@
+
+<div class="parallax">
+    <div class="panel panel-default text-center" id="panel1">
+        <h2>ALIEN BURGER</h2>
+        <div class="panel-body text-center">
+            <form class="create-form">
+                <div class="form-group">
+                    <label for="bu">ALIEN BURGER NAME:</label>
+                    <input type="text" id="bu" name="name">
+                    <button type="submit" class="btn btn-warning" id="addbttn">ADD BURGER FOR ALIEN TO DEVOUR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-header result-panel" id="uneaten">
+                <h3>ALIEN DEVOUR ROW: &emsp;&nbsp; <img class="alien" src="https://www.shareicon.net/data/128x128/2016/02/21/304923_alien_128x128.png"> </h3>
+                
+                <ul>
+                    {{#each burgers}} 
+                    {{#unless devoured}}
+                    <ul>
+                        <div class="row">
+                            <div class="col-md-8">
+                                 <h4>{{burger_name}}</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="btn btn-primary eatbttn" data-id="{{this.id}}" data-devoured="{{devoured}}">DEVOUR!!</button>
+                                <br>
+                            </div>
+                        </div>
+                        
+                    </ul> 
+                    {{/unless}} 
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-header result-panel" id="eaten">
+                <h3>DEVOURED: &emsp;&nbsp; <img class="alienPoof" src="https://www.shareicon.net/data/128x128/2016/02/21/304923_alien_128x128.png"> </h3>               
+                <ul>
+                    {{#each burgers}} 
+                    {{#if devoured}}
+                    <ul>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4>{{burger_name}}</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="btn btn-danger deleteit" data-id="{{this.id}}" data-devoured="{{devoured}}">DESTROY EVIDENCE!!</button>
+                                <br>
+                            </div>
+                        </div>                    
+                    </ul>
+                    {{/if}} 
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
